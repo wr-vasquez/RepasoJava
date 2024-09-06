@@ -1,3 +1,4 @@
+package vectores;
 import java.util.Scanner;
 //Programa que carga un vector y cuenta cuantas veces se ingresó el numero 3
 
