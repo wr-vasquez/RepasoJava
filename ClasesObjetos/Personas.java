@@ -1,55 +1,60 @@
-// Crea una clase Persona con los atributos nombre, edad y dpi. 
-// Implementa un constructor para inicializar los atributos, 
-// además de métodos para mostrar la información de la persona y determinar si es mayor de edad.
+// Crea una clase Persona con los atributos nombre, edad y dPi. Implementa un constructor para inicializar los atributos. 
+// El programa debe pedir al usuario que ingrese los datos de una persona y mostrar la información, además de determinar 
+// si es mayor de edad.
+package ClasesObjetos ;
 
-package ClasesObjetos;
 
-//Definimos la clase Persona
+import java.util.Scanner;
+
 class Persona {
-    //Atributos de la clase
     private String nombre;
     private int edad;
-    private String dpi;
+    private String dni;
 
-    //Constructor para inicializar los atributos
-    public Persona(String nombre, int edad, String dpi){
+    public Persona(String nombre, int edad, String dni) {
         this.nombre = nombre;
         this.edad = edad;
-        this.dpi = dpi;
+        this.dni = dni;
     }
 
-    //Método para mostrar la información de la persona
-    public void mostrarInfo(){
-        System.out.println("Nombre: "+nombre);
-        System.out.println("Edad: "+edad);
-        System.out.println("DPI: "+dpi);
+    public void mostrarInfo() {
+        System.out.println("*** MOSTRANDO DATOS ***");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("DPI: " + dni);
     }
 
-
-    //Método para verificar si la persona es mayor de edad
-    public boolean esMayordeEdad(){
-        return edad >=18;
+    public boolean esMayorDeEdad() {
+        return edad >= 18;
     }
-
-    
 }
 
 public class Personas {
-    public static void main(String[] args){
-        //Creacion de una instancia de la clase persona
-       Persona persona1 = new Persona ("Juan",25,"24782754510609");
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-       //Mostrar información de la persona
-       persona1.mostrarInfo();
+        // Pedir datos al usuario
+        System.out.println("Ingrese su nombre:");
+        String nombre = sc.nextLine();
 
-       //Verificar si es mayor de edad
-       if(persona1.esMayordeEdad()){
-        System.out.println("Es mayor de edad");
-       }else{
-        System.out.println("No es mayor de edad");
-       }
+        System.out.println("Ingrese su edad:");
+        int edad = sc.nextInt();
+
+        System.out.println("Ingrese su DPI:");
+        String dni = sc.next();
+
+        // Crear instancia de Persona
+        Persona persona1 = new Persona(nombre, edad, dni);
+
+        // Mostrar la información
+        persona1.mostrarInfo();
+
+        // Verificar si es mayor de edad
+        if (persona1.esMayorDeEdad()) {
+            System.out.println("Es mayor de edad.");
+        } else {
+            System.out.println("No es mayor de edad.");
+        }
     }
-
 }
-
 
